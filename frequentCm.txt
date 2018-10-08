@@ -1,0 +1,21 @@
+docker run -it -p 8888:8888 
+docker stop #id
+docker start #name 
+docker exec -it #id /bin/bash
+docker ps -a
+docker images
+docker ps
+docker attach #id
+
+sudo -i
+
+sudo mount -t vboxsf web /web
+#1--在虚拟机设置工匠文件夹 web
+#2--使用上面命令在虚拟机里挂载文件 
+#3--上面下面命令在cmd中挂载对应端口 和文件夹
+docker run -d -p 80:80 -v /web:/usr/local/apache2/htdocs --name http httpd
+
+
+
+python -m visdom.server &
+mvn clean compile package 
